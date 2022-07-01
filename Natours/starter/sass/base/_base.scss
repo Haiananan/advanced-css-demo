@@ -1,0 +1,39 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 100%;
+  //big screen - small screen
+  @include respond(big-desktop) {
+    font-size: 120%;
+  }
+  @include respond(tab-land) {
+    font-size: 90%;
+  }
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+  @include respond(phone) {
+    font-size: 50%;
+  }
+}
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 1.875rem;
+  box-sizing: border-box;
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}

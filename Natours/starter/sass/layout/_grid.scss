@@ -1,0 +1,28 @@
+.row {
+  max-width: 71.25rem;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  @include clearfix;
+  @include respond(tab-port) {
+    max-width: 500px;
+  }
+  [class^="col-"] {
+    float: left;
+    &:not(:last-child) {
+      margin-right: $gutter;
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-small;
+      }
+    }
+  }
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter}) / 2);
+  }
+  .col-1-of-3 {
+    width: calc((100% - #{$gutter}* 2) / 3);
+  }
+  .col-1-of-4 {
+    width: calc((100% - #{$gutter}* 3) / 4);
+  }
+}
